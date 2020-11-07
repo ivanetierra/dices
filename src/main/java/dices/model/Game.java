@@ -47,7 +47,6 @@ public class Game {
         this.dice1 = dice1;
         this.dice2 = dice2;
         this.win = win;
-
     }
 
     public static int throwDice() {

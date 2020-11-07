@@ -1,5 +1,6 @@
 package dices.controller;
 
+import dices.exceptions.PlayerNotFoundException;
 import dices.service.GameServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -45,8 +46,8 @@ public class PlayerController {
     public Game playGame(@PathVariable(name="player_id")Long player_id){
 
         List<Game>listOfGames = gameServiceImpl.getGamesByPlayer(player_id);
-        int gamesPlayed = listOfGames.size();
 
+        int gamesPlayed = listOfGames.size();
         return playerServiceImpl.playGame(player_id, gamesPlayed);
     }
 
